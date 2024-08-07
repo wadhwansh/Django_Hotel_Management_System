@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!---header section------>
+  <header class="header">
+    <a href="#" class="logo"> Golden Gates Hotel </a>
+    <nav class="navbar">
+      <a class="{% if request.path == '/' %} active {% endif %}" href="{% url 'index' %}">home</a>
+      <a href="{% url 'about' %}">about</a>
+      <a href="{% url 'room' %}">room</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'gallary' %}">gallery</a>
+      <a href="{% url 'review' %}">review</a>
+      <a href="#" class="btn"> book now</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+  </header>
+  <!----end of header section------->
+  <div class="about">
+    <div class="image-container">
+      <div class="background"></div>
+    </div>
+    <div class="text-container">
+      <h2>About Us</h2>
+      <p>
+        Welcome to Golden Gates Hotel, where luxury and comfort meet to create unforgettable experiences.
+        Our hotel is dedicated to providing you with exceptional service, stunning accommodations, and a seamless reservation process. Explore our gallery to discover
+        the elegance and charm that awaits you, and be sure to share your experiences in our review section.
+        At Golden Gates Hotel, we're not just a place to stay, we're a destination for cherished memories.
+      </p>
+    </div>
+  </div>
+  <!--footer-->
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>contact info</h3>
+        <a href=""> <i class="fas fa-phone"></i> +2547-000-000 </a>
+        <a href=""> <i class="fas fa-phone"></i> +2547-000-000</a>
+        <a href="">
+          <i class="fas fa-envelope"></i> goldengatesHotel@gmail.com</a
+        >
+        <a href=""> <i class="fas fa-map"></i> Malindi, Kenya</a>
+      </div>
+
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="{% url 'index' %}"> <i class="fa-solid fa-link"></i> home</a>
+        <a href="{% url 'about' %}"><i class="fa-solid fa-link"></i> about</a>
+        <a href="{% url 'room' %}"> <i class="fa-solid fa-link"></i> rooms</a>
+        <a href="{% url 'services' %}"> <i class="fa-solid fa-link"></i> services</a>
+        <a href="{% url 'gallary' %}"> <i class="fa-solid fa-link"></i> gallery</a>
+        <a href="{% url 'review' %}"> <i class="fa-solid fa-link"></i> reviews</a>
+        <a href="/template/booking.html"> <i class="fa-solid fa-link"></i> Bookings</a>
+      </div>
+
+      <div class="box">
+        <h3>Services</h3>
+        <a href=""> <i class="fa-solid fa-link"></i> Swimming Pool</a>
+        <a href=""> <i class="fa-solid fa-link"></i> Food & Drinks</a>
+        <a href=""> <i class="fa-solid fa-link"></i> Restaurant</a>
+        <a href=""> <i class="fa-solid fa-link"></i> Beauty Spa</a>
+        <a href=""> <i class="fa-solid fa-link"></i> Resort Beach</a>
+      </div>
+    </div>
+
+    <div class="share">
+      <a href="" class="fab fa-facebook-f"></a>
+      <a href="" class="fab fa-instagram"></a>
+      <a href="" class="fab fa-twitter"></a>
+      <a href="" class="fab fa-pinterest"></a>
+    </div>
+
+    <div class="credit">&copy;2023 <span>CIP-TITANS GROUP 2</span></div>
+  </section>
+  <!--end of footer-->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="{% static 'js/main.js' %}"></script> 
+</body>
+</html>

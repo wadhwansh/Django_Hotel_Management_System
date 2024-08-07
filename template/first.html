@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First page of html</title>
+</head>
+<body>
+    <p>HELLO GUIYYZZZ !! THIS IS MY FIRST HTML PAGE.</p>
+    <div>{{name}}</div>
+    <p>SUBJECT WISE MARKS OF {{name}}</p>
+    <table border="1">
+        <tr>
+            <th>Subjects</th>
+           
+            {% for n in subjects %}
+            <td>{{n.subject}} </td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Marks</th>
+            {% for i in Marks %}
+            {% if i > 40 %}
+            <td> {{i}} </td>
+            {% else %}
+                <td>Fail</td>
+            {% endif%}
+            {% endfor %}
+        </tr>
+
+    </table>
+   
+</body>
+</html>

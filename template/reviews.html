@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reviews</title>
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!---header section------>
+    <header class="header">
+      <a href="" class="logo"> Golden Gates Hotel </a>
+
+      <nav class="navbar">
+        <a class="{% if request.path == '/' %} active {% endif %}" href="{% url 'index'%}">home</a>
+        <a href="{% url 'about' %}">about</a>
+        <a href="{% url 'room' %}">room</a>
+        <a href="{% url 'services' %}">Services</a>
+        <a href="{% url 'gallary' %}">gallery</a>
+        <a href="{% url 'review' %}">review</a>
+        <a href="/template/booking.html" class="btn"> book now</a>
+      </nav>
+
+      <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <!----end of header section------->
+    <section class="review" id="review"></section>
+    <div class="testimonials">
+      <h1 class="heading" id="bookheading">Testimonials</h1>
+      <div class="row">
+        <div class="col">
+          <div class="testimonial">
+            <img src="/static/img/pic-4.png" alt="" />
+            <div class="name">Lanie</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>
+              "I had a back massage with Golden Gates and I would just like to
+              say that it was the best massage I have ever had! I am looking
+              forward to booking my next appointment"
+            </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="testimonial">
+            <img src="/static/img/pic-5.png" alt="" />
+            <div class="name">Jammie Vardy</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>
+              "Thank you for dinner last night. It was amazing!! I have to say
+              it’s the best meal I have had in quite some time. You will
+              definitely be seeing more of me eating at your establishment. My
+              wife was very impressed and we can’t wait for our parents to come
+              visit so that we can share our new favorite place with them."
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="testimonial">
+            <img src="/static/img/pic-6.png" alt="" />
+            <div class="name">Karina Kapoor</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>
+              "Had a very relaxed stay. Great service amazing Spa. Lovely
+              building, calming greenery, serene lake. What more could one ask
+              for? We will be back again hopefully."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="left"></div>
+          <div class="right">
+
+            <h2>Contact Us</h2>
+            <div>
+            <form method="POST">
+            {% csrf_token %}
+            <input type="text" class="field" name="Name" placeholder="Your Name" required/>
+            <input type="email" class="field" name="Email" placeholder="Your Email" required/>
+            <input type="text" class="field" name="Phone" placeholder="Your Phone" required />
+            <textarea
+              class="field area"
+              name="Review"
+              placeholder="we value your response"
+            ></textarea>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+    <!---footer-->
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>contact info</h3>
+          <a href=""> <i class="fas fa-phone"></i> +2547-000-000 </a>
+          <a href=""> <i class="fas fa-phone"></i> +2547-000-000</a>
+          <a href="">
+            <i class="fas fa-envelope"></i> goldengatesHotel@gmail.com</a
+          >
+          <a href=""> <i class="fas fa-map"></i> Malindi, Kenya</a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="{% url 'index' %}"> <i class="fa-solid fa-link"></i> home</a>
+            <a href="{% url 'about' %}"><i class="fa-solid fa-link"></i> about</a>
+            <a href="{% url 'room' %}"> <i class="fa-solid fa-link"></i> rooms</a>
+            <a href="{% url 'services' %}"> <i class="fa-solid fa-link"></i> services</a>
+            <a href="{% url 'gallary' %}"> <i class="fa-solid fa-link"></i> gallery</a>
+            <a href="{% url 'review' %}"> <i class="fa-solid fa-link"></i> reviews</a>
+          <a href="booking.html"> <i class="fa-solid fa-link"></i> Bookings</a>
+        </div>
+
+        <div class="box">
+          <h3>Services</h3>
+          <a href=""> <i class="fa-solid fa-link"></i> Swimming Pool</a>
+          <a href=""> <i class="fa-solid fa-link"></i> Food & Drinks</a>
+          <a href=""> <i class="fa-solid fa-link"></i> Restaurant</a>
+          <a href=""> <i class="fa-solid fa-link"></i> Beauty Spa</a>
+          <a href=""> <i class="fa-solid fa-link"></i> Resort Beach</a>
+        </div>
+      </div>
+
+      <div class="share">
+        <a href="" class="fab fa-facebook-f"></a>
+        <a href="" class="fab fa-instagram"></a>
+        <a href="" class="fab fa-twitter"></a>
+        <a href="" class="fab fa-pinterest"></a>
+      </div>
+
+      <div class="credit">&copy;2023 <span>CIP-TITANS GROUP 2</span></div>
+    </section>
+    <!--end of footer-->
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>
